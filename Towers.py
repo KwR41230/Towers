@@ -27,7 +27,7 @@ print("\nThe fastest you can solve this game is in {0} moves".format(num_optimal
 
 # Get User Input
 def get_input():
-    choices = [stack.get_name()[0] for stack in stacks]
+    choices = [stack.get_name()[0].upper() for stack in stacks]
 
     while True:
         for i in range(len(stacks)):
@@ -35,7 +35,7 @@ def get_input():
             letter = choices[i]
             print("Enter {0} for {1}".format(letter, name))
 
-        user_input = input("")
+        user_input = input("").upper()
 
         if user_input in choices:
             for i in range(len(stacks)):
@@ -70,5 +70,14 @@ while (right_stack.get_size() != num_disks):
         else:
             print("\nInvalid Move. Try Again")
 
-print("\n\nYou completed the game in {0} moves, and the optimal number of moves is {1}".format(num_user_moves,
+print('''
+                    ____    ____  ______    __    __     ____    __    ____  __  .__   __.  __  
+                    \   \  /   / /  __  \  |  |  |  |    \   \  /  \  /   / |  | |  \ |  | |  | 
+                     \   \/   / |  |  |  | |  |  |  |     \   \/    \/   /  |  | |   \|  | |  | 
+                      \_    _/  |  |  |  | |  |  |  |      \            /   |  | |  . `  | |  | 
+                        |  |    |  `--'  | |  `--'  |       \    /\    /    |  | |  |\   | |__| 
+                        |__|     \______/   \______/         \__/  \__/     |__| |__| \__| (__) 
+                                                                            
+''')
+print("\n\nYou completed the game in {0} moves, and the optimal number of moves is {1}\n".format(num_user_moves,
                                                                                                num_optimal_moves))
